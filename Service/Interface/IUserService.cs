@@ -1,0 +1,15 @@
+﻿using Domain.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Service
+{
+    public interface IUserService
+    {
+        Task<IEnumerable<User>> GetAllUsers();
+        Task<User> GetUserById(int id);
+        Task<User> CreateUser(User user);
+        Task<User> UpdateUser(int id, User user);
+        Task DeleteUser(int id);
+    }
+}

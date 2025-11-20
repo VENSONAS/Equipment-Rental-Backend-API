@@ -1,0 +1,43 @@
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+bin/
+obj/
+out/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+## Logs
+*.log
+
+## Environment
+*.env
+
+## Cache
+*.cache
+*.tmp
+
+## ASP.NET
+appsettings.Development.json
+appsettings.*.local.json
+
+## Others
+*.db
+*.db-shm
+*.db-wal

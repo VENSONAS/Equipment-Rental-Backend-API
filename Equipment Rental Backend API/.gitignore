@@ -1,0 +1,47 @@
+## Build artifacts
+bin/
+obj/
+
+## User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+## Visual Studio files
+.vs/
+
+## NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+*.snupkg
+project.assets.json
+
+## Logs
+*.log
+
+## OS junk
+.DS_Store
+Thumbs.db
+
+## Environment / secrets
+*.env
+*.env.local
+*.env.development
+*.env.production
+
+## Publish output
+*/publish/
+*.pubxml
+*.pubxml.user
+
+## ASP.NET scaffolding artifacts
+ScaffoldingReadMe.txt
+
+## Rider
+.idea/
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper

@@ -9,11 +9,11 @@ using Repository.Data;
 
 #nullable disable
 
-namespace Equipment_Rental_Backend_API.Migrations
+namespace Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251119174917_TestMigration")]
-    partial class TestMigration
+    [Migration("20251124073359_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

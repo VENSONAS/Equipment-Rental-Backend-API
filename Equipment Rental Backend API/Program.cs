@@ -25,11 +25,16 @@ builder.Services.AddHttpClient<ICurrencyService, CurrencyService>();
 
 var connectionString =
     builder.Configuration.GetConnectionString("DefaultConnection")
-        ?? throw new InvalidOperationException("Connection string"
-        + "'DefaultConnection' not found.");
+        ?? throw new InvalidOperationException(
+            "Connection string 'DefaultConnection' not found."
+        );
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(
+        connectionString,
+        b => b.MigrationsAssembly("Repository")
+    )
+);
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -46,20 +51,18 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
 
-using var scope = app.Services.CreateScope();
-var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-
-var cs = builder.Configuration.GetConnectionString("DefaultConnection");
-Console.WriteLine("CS from builder: " + cs);
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
 
 app.Run();

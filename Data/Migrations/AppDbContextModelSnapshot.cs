@@ -8,7 +8,7 @@ using Repository.Data;
 
 #nullable disable
 
-namespace Equipment_Rental_Backend_API.Migrations
+namespace Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot

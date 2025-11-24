@@ -19,6 +19,11 @@ Run the application with:
 
 dotnet run
 
+(If migrations didn't apply then:
+dotnet ef migrations add InitialCreate --project "../Data" --startup-project .
+
+dotnet ef database update --startup-project "../Equipment Rental Backend API")
+
 
 The API will launch and automatically connect to the database container.
 
